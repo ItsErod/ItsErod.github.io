@@ -1,0 +1,156 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+
+const title = `${site.name} — ${site.location}`;
+---
+
+<Layout title={title} description={site.description}>
+  <Header />
+  <main id="content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="kicker">{site.location}</p>
+        <h1 id="hero-title">{site.name}</h1>
+        <p class="tagline">{site.hero.tagline}</p>
+        <div class="actions">
+          <a class="button" href={site.hero.primaryAction.href}>{site.hero.primaryAction.label}</a>
+          <a class="link-quiet" href={site.hero.secondaryAction.href}>{site.hero.secondaryAction.label}</a>
+        </div>
+        {
+          site.hero.focuses.length > 0 && (
+            <ul class="focuses" aria-label="Focus areas">
+              {site.hero.focuses.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div>
+          <p class="kicker" aria-hidden="true">01</p>
+          <h2 id="about-title">{site.about.heading}</h2>
+        </div>
+        <div class="split-body prose">
+          {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="kicker" aria-hidden="true">02</p>
+            <h2 id="projects-title">{site.projects.heading}</h2>
+          </div>
+          <p class="split-body lede">{site.projects.lede}</p>
+        </div>
+        <ul class="card-grid project-grid">
+          {
+            site.projects.items.map((project) => (
+              <li>
+                <article class="card">
+                  <div class="card-top">
+                    <p>{project.year}</p>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p class="card-summary">{project.summary}</p>
+                  {
+                    project.tags.length > 0 && (
+                      <ul class="tags" aria-label="Tags">
+                        {project.tags.map((tag) => (
+                          <li>{tag}</li>
+                        ))}
+                      </ul>
+                    )
+                  }
+                  <div class="card-foot">
+                    {project.href ? (
+                      <a class="card-link" href={project.href}>
+                        {project.linkLabel}
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    ) : (
+                      <p class="fine">[Placeholder] Add a link</p>
+                    )}
+                  </div>
+                </article>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="setup" aria-labelledby="setup-title">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="kicker" aria-hidden="true">03</p>
+            <h2 id="setup-title">{site.gear.heading}</h2>
+          </div>
+          <p class="split-body lede">{site.gear.lede}</p>
+        </div>
+        <ul class="card-grid gear-grid">
+          {
+            site.gear.items.map((item) => (
+              <li>
+                <article class="card">
+                  <h3>{item.name}</h3>
+                  <p class="card-summary">{item.summary}</p>
+                  <dl class="specs">
+                    {item.specs.map((spec) => (
+                      <div class="spec">
+                        <dt>{spec.label}</dt>
+                        <dd>{spec.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </article>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap split">
+        <div>
+          <p class="kicker" aria-hidden="true">04</p>
+          <h2 id="contact-title">{site.contact.heading}</h2>
+        </div>
+        <div class="split-body">
+          <p class="lede">{site.contact.lede}</p>
+          <a class="email" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+          <p class="fine email-note">{site.contact.emailNote}</p>
+          <ul class="socials">
+            {
+              site.contact.socials.map((social) => (
+                <li>
+                  <a
+                    class="social"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="social-label">{social.label}</span>
+                    <span class="social-meta">{social.handle}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

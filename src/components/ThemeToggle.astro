@@ -1,0 +1,65 @@
+<button
+  id="theme-toggle"
+  class="icon-button"
+  type="button"
+  aria-label="Toggle color theme"
+  aria-pressed="false"
+>
+  <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path
+      d="M12 3v1.6M12 19.4V21M3 12h1.6M19.4 12H21M5.6 5.6l1.1 1.1M17.3 17.3l1.1 1.1M18.4 5.6l-1.1 1.1M6.7 17.3l-1.1 1.1"
+    ></path>
+  </svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"></path>
+  </svg>
+</button>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>("#theme-toggle");
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function systemTheme(): "light" | "dark" {
+    return media.matches ? "dark" : "light";
+  }
+
+  function currentTheme(): "light" | "dark" {
+    const set = root.dataset.theme;
+    if (set === "light" || set === "dark") return set;
+    return systemTheme();
+  }
+
+  function updateButton(): void {
+    if (!button) return;
+    const theme = currentTheme();
+    const next = theme === "dark" ? "light" : "dark";
+    button.setAttribute("aria-label", `Switch to ${next} theme`);
+    button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+  }
+
+  button?.addEventListener("click", () => {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    root.style.colorScheme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch (error) {
+      /* Ignore storage failures and still switch for this visit. */
+    }
+    updateButton();
+  });
+
+  media.addEventListener("change", () => {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem("theme");
+    } catch (error) {
+      stored = null;
+    }
+    if (stored !== "light" && stored !== "dark") updateButton();
+  });
+
+  updateButton();
+</script>
