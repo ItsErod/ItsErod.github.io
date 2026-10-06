@@ -47,10 +47,10 @@ export const site = {
   /** Canonical site URL. This is a user site, so it is served at the domain root. */
   url: "https://itserod.github.io",
   description:
-    "[Placeholder] One sentence about you for search results and link previews.",
+    "Ethan in Toronto. PC gaming, computers, and a few public projects.",
 
   hero: {
-    tagline: "[Placeholder] Replace this with your tagline.",
+    tagline: "PC gaming and computers, from Toronto.",
     /**
      * Topics Ethan shared. Edit or remove any that should not be on the site.
      */
@@ -69,41 +69,40 @@ export const site = {
   about: {
     heading: "About",
     paragraphs: [
-      "[Placeholder] Write a short bio. Starting points you already shared: you are based in Toronto, you work mostly in productivity, and you are into PC gaming, IT, and computers.",
-      "[Placeholder] Add a second paragraph if you want one — how you work, what you are learning, or what this site is for. Delete it if you do not.",
+      "Based in Toronto, working mostly in productivity, and into IT, computers, and PC gaming. On Steam he is Erod (thebigrod): member since December 2016, level 80, with Ontario, Canada on the profile.",
+      "Most of the recorded playtime is Overwatch (150 hours) and Deadlock (105 hours). The public Steam summary is two PC Building Simulator icons, a GPU and a case.",
     ],
   },
 
   projects: {
     heading: "Projects",
-    lede: "[Placeholder] A sentence about the work or builds you want to show.",
+    lede: "Steam Workshop items from the public profile, and this site.",
     items: [
       {
-        title: "[Placeholder] Project title",
-        year: "[Placeholder]",
+        title: "AWP 1v1 to 5v5",
+        year: "Counter-Strike 2",
         summary:
-          "[Placeholder] What you built, what you used, and why it is here.",
-        tags: ["[Placeholder]"],
-        href: "",
-        linkLabel: "View project",
+          "A Steam Workshop map. The description on the item says it was his first map, and asks what people want added.",
+        tags: ["Steam Workshop", "Map"],
+        href: "https://steamcommunity.com/sharedfiles/filedetails/?id=1545168136",
+        linkLabel: "View on Steam",
       },
       {
-        title: "[Placeholder] Build title",
-        year: "[Placeholder]",
-        summary:
-          "[Placeholder] Another card. Replace this text, or delete the card in site.ts.",
-        tags: ["[Placeholder]"],
-        href: "",
-        linkLabel: "View project",
+        title: "R6S Snow Glaz",
+        year: "Wallpaper Engine",
+        summary: "A Wallpaper Engine item described as Glaz during snow combat.",
+        tags: ["Steam Workshop", "Wallpaper"],
+        href: "https://steamcommunity.com/sharedfiles/filedetails/?id=1403886346",
+        linkLabel: "View on Steam",
       },
       {
-        title: "[Placeholder] Project title",
-        year: "[Placeholder]",
+        title: "Personal site",
+        year: "2026",
         summary:
-          "[Placeholder] A third card if you need it. Delete any card you do not want.",
-        tags: ["[Placeholder]"],
-        href: "",
-        linkLabel: "View project",
+          "This page. A static site for Ethan, hosted on GitHub Pages at the domain root.",
+        tags: ["Astro", "GitHub Pages"],
+        href: "https://github.com/ItsErod/ItsErod.github.io",
+        linkLabel: "View repository",
       },
     ] satisfies Project[],
   },
@@ -124,7 +123,8 @@ export const site = {
       },
       {
         name: "Gaming setup",
-        summary: "[Placeholder] What you play, or how the desk is set up.",
+        summary:
+          "Steam playtime is mostly Overwatch and Deadlock. The PC, display, and peripherals are not on the public profile.",
         specs: [
           { label: "PC", value: "[Placeholder]" },
           { label: "Display", value: "[Placeholder]" },
@@ -137,19 +137,24 @@ export const site = {
 
   contact: {
     heading: "Contact",
-    lede: "[Placeholder] Say how you would like to hear from people.",
+    lede: "GitHub and Steam are filled in. Email and LinkedIn are still placeholders.",
     email: "you@example.com",
     emailNote: "[Placeholder] Replace you@example.com with your real email.",
     socials: [
       {
         label: "GitHub",
-        handle: "[Placeholder] your-handle",
-        href: "https://example.com",
+        handle: "ItsErod",
+        href: "https://github.com/ItsErod",
+      },
+      {
+        label: "Steam",
+        handle: "Erod",
+        href: "https://steamcommunity.com/id/thebigrod/",
       },
       {
         label: "LinkedIn",
-        handle: "[Placeholder] your-handle",
-        href: "https://example.com",
+        handle: "[Placeholder] Add your profile URL",
+        href: "",
       },
     ] satisfies SocialLink[],
   },

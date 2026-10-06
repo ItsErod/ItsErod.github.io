@@ -135,15 +135,24 @@ const title = `${site.name} — ${site.location}`;
             {
               site.contact.socials.map((social) => (
                 <li>
-                  <a
-                    class="social"
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span class="social-label">{social.label}</span>
-                    <span class="social-meta">{social.handle}</span>
-                  </a>
+                  {
+                    social.href ? (
+                      <a
+                        class="social"
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span class="social-label">{social.label}</span>
+                        <span class="social-meta">{social.handle}</span>
+                      </a>
+                    ) : (
+                      <div class="social">
+                        <span class="social-label">{social.label}</span>
+                        <span class="social-meta">{social.handle}</span>
+                      </div>
+                    )
+                  }
                 </li>
               ))
             }

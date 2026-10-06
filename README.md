@@ -32,7 +32,7 @@ Everything you would customize is in [`src/data/site.ts`](src/data/site.ts).
 - Name, Toronto, the focus list, and the MacBook and gaming-setup headings are already filled in. Change them if they should read differently.
 - Projects are cards in `projects.items`. Copy a card to add one, or delete a card to remove it.
 - Leave a project `href` as `""` until you have a URL. The card shows “Add a link” until then.
-- Contact uses `you@example.com` and `https://example.com` on purpose. Replace both with your real email and profile URLs.
+- GitHub and Steam are filled in. Email is still `you@example.com`, and LinkedIn has no URL until you add one.
 - `url` is the canonical address. It is already set to `https://itserod.github.io`.
 
 Section labels, the nav, and the hero buttons are in that same file.
