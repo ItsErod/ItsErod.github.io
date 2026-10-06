@@ -43,14 +43,14 @@ export type SocialLink = {
 
 export const site = {
   name: "Ethan",
-  location: "Toronto",
+  location: "Canada",
   /** Canonical site URL. This is a user site, so it is served at the domain root. */
   url: "https://itserod.github.io",
   description:
-    "Ethan in Toronto. PC gaming, computers, and a few public projects.",
+    "Ethan in Canada. PC gaming, computers, and a few public projects.",
 
   hero: {
-    tagline: "PC gaming and computers, from Toronto.",
+    tagline: "PC gaming and computers, from Canada.",
     /**
      * Topics Ethan shared. Edit or remove any that should not be on the site.
      */
@@ -69,8 +69,8 @@ export const site = {
   about: {
     heading: "About",
     paragraphs: [
-      "Based in Toronto, working mostly in productivity, and into IT, computers, and PC gaming. On Steam he is Erod (thebigrod): member since December 2016, level 80, with Ontario, Canada on the profile.",
-      "Most of the recorded playtime is Overwatch (150 hours) and Deadlock (105 hours). The public Steam summary is two PC Building Simulator icons, a GPU and a case.",
+      "I'm Ethan. I live in Canada, work mostly in productivity, and spend the rest of my time on IT, computers, and PC gaming.",
+      "On Steam I'm Erod. The profile thebigrod has been up since December 2016 and is level 80. Most of the hours are in Overwatch (150) and Deadlock (105), with WARDOGS next. The public summary is two PC Building Simulator icons: a GPU and a case.",
     ],
   },
 
@@ -109,27 +109,22 @@ export const site = {
 
   gear: {
     heading: "Setup",
-    lede: "[Placeholder] Specs below are waiting on the real details.",
+    lede: "A MacBook for daily work, and a separate PC for games. Hardware specs are still open.",
     items: [
       {
         name: "MacBook",
-        summary: "[Placeholder] What you use this machine for.",
-        specs: [
-          { label: "Model", value: "[Placeholder]" },
-          { label: "Chip", value: "[Placeholder]" },
-          { label: "Memory", value: "[Placeholder]" },
-          { label: "Storage", value: "[Placeholder]" },
-        ],
+        summary:
+          "The machine I use day to day. The model, chip, and memory are not written down here yet.",
+        specs: [],
       },
       {
         name: "Gaming setup",
         summary:
-          "Steam playtime is mostly Overwatch and Deadlock. The PC, display, and peripherals are not on the public profile.",
+          "The PC I play on. Steam lists 336 games. The case, display, and peripherals are not on the public profile.",
         specs: [
-          { label: "PC", value: "[Placeholder]" },
-          { label: "Display", value: "[Placeholder]" },
-          { label: "Peripherals", value: "[Placeholder]" },
-          { label: "Audio", value: "[Placeholder]" },
+          { label: "Library", value: "336 games" },
+          { label: "Most played", value: "Overwatch, Deadlock" },
+          { label: "Also played", value: "WARDOGS" },
         ],
       },
     ] satisfies GearItem[],

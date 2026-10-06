@@ -105,14 +105,18 @@ const title = `${site.name} — ${site.location}`;
                 <article class="card">
                   <h3>{item.name}</h3>
                   <p class="card-summary">{item.summary}</p>
-                  <dl class="specs">
-                    {item.specs.map((spec) => (
-                      <div class="spec">
-                        <dt>{spec.label}</dt>
-                        <dd>{spec.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
+                  {
+                    item.specs.length > 0 && (
+                      <dl class="specs">
+                        {item.specs.map((spec) => (
+                          <div class="spec">
+                            <dt>{spec.label}</dt>
+                            <dd>{spec.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    )
+                  }
                 </article>
               </li>
             ))
