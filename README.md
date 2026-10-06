@@ -33,7 +33,7 @@ Everything you would customize is in [`src/data/site.ts`](src/data/site.ts).
 - Projects are cards in `projects.items`. Copy a card to add one, or delete a card to remove it.
 - Leave a project `href` as `""` until you have a URL. The card shows “Add a link” until then.
 - Contact uses `you@example.com` and `https://example.com` on purpose. Replace both with your real email and profile URLs.
-- `url` is the canonical address. Update it when you have a domain.
+- `url` is the canonical address. It is already set to `https://itserod.github.io`.
 
 Section labels, the nav, and the hero buttons are in that same file.
 
@@ -41,26 +41,10 @@ Section labels, the nav, and the hero buttons are in that same file.
 
 The first visit follows the operating system light or dark setting. The header control saves a choice in this browser only. It does not change the file. Animations stay off when the system asks for reduced motion.
 
-## Deploy it for free
+## Deploy
 
-The site is static. Any host that can run `npm run build` and publish the `dist` folder will work. No database and no server.
+The live site is GitHub Pages at [https://itserod.github.io](https://itserod.github.io). The repository is [ItsErod/ItsErod.github.io](https://github.com/ItsErod/ItsErod.github.io).
 
-**Cloudflare Pages**
+A push to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes the `dist` folder. This is a user site, so it is served at the domain root and Astro is not given a subpath `base`.
 
-1. Push the project to a Git host.
-2. Create a Pages project and connect the repo.
-3. Build command: `npm run build`
-4. Output directory: `dist`
-5. Set the Node.js version to 22.
-
-**Netlify**
-
-Same build command and output directory. The free tier is enough for this site.
-
-**GitHub Pages**
-
-Use a GitHub Action that runs `npm run build` and publishes `dist`, or upload the contents of `dist` to a Pages site. Set `url` in `src/data/site.ts` to the Pages address, for example `https://yourname.github.io/your-repo`.
-
-**Vercel**
-
-Import the repo and leave the framework preset on Astro. Build command `npm run build`, output `dist`.
+The site is static. Another host can use the same build: `npm run build`, then publish `dist`. Node.js 22.12 or newer.

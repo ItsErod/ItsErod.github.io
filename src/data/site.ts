@@ -44,8 +44,8 @@ export type SocialLink = {
 export const site = {
   name: "Ethan",
   location: "Toronto",
-  /** Replace with the live site URL when you have a domain. */
-  url: "https://example.com",
+  /** Canonical site URL. This is a user site, so it is served at the domain root. */
+  url: "https://itserod.github.io",
   description:
     "[Placeholder] One sentence about you for search results and link previews.",
 
