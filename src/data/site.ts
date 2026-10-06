@@ -109,22 +109,40 @@ export const site = {
 
   gear: {
     heading: "Setup",
-    lede: "A MacBook for daily work, and a separate PC for games. Hardware specs are still open.",
+    lede: "A MacBook Pro for daily work, and a Windows PC for games.",
     items: [
       {
-        name: "MacBook",
-        summary:
-          "The machine I use day to day. The model, chip, and memory are not written down here yet.",
-        specs: [],
+        name: "MacBook Pro",
+        summary: "The laptop I use day to day.",
+        specs: [{ label: "Chip", value: "M1 Pro" }],
       },
       {
-        name: "Gaming setup",
-        summary:
-          "The PC I play on. Steam lists 336 games. The case, display, and peripherals are not on the public profile.",
+        name: "Gaming PC",
+        summary: "Windows 11 desktop. Steam lists 336 games on this setup.",
         specs: [
-          { label: "Library", value: "336 games" },
-          { label: "Most played", value: "Overwatch, Deadlock" },
-          { label: "Also played", value: "WARDOGS" },
+          { label: "Processor", value: "AMD Ryzen 7 5800X3D @ 4.8 GHz" },
+          { label: "Memory", value: "4×16 GB @ 3200 MHz" },
+          { label: "Graphics", value: "Zotac GeForce RTX 5080" },
+          { label: "Motherboard", value: "ASRock B450M Steel Legend" },
+          { label: "Storage", value: "5 TB" },
+          { label: "Power", value: "Corsair RM850x SHIFT" },
+          { label: "Case", value: "Fractal Meshify 2 Black" },
+          { label: "System", value: "Windows 11" },
+        ],
+      },
+      {
+        name: "Peripherals",
+        summary: "The desk around the gaming PC.",
+        specs: [
+          {
+            label: "Monitor 1",
+            value: "LG UltraGear OLED, 3840×2160 @ 240 Hz or 1920×1080 @ 480 Hz",
+          },
+          { label: "Monitor 2", value: "Samsung G7, 3840×2160 @ 144 Hz" },
+          { label: "Keyboard", value: "Keychron Q1 HE 8K" },
+          { label: "Mouse", value: "Pulsar X2H Mini, Acid Rewind Limited" },
+          { label: "Headphones", value: "Sennheiser HD 560S" },
+          { label: "Mic", value: "Blue Yeti Pro" },
         ],
       },
     ] satisfies GearItem[],
